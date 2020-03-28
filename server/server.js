@@ -99,8 +99,8 @@ const session = expressSession({
 	}
 });
 
-if (config.httpOnly) {
-	app.set('trust proxy', 1) // trust first proxy
+if (config.trustProxy) {
+	app.set('trust proxy', config.trustProxy);
 }
 
 app.use(session);
